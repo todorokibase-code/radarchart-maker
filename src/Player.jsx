@@ -44,7 +44,7 @@ const StatsBoard = ({ stats, onStatsChange, pos }) => {
                     </div>
                     <div style={{ alignmentBaseline: "flex-start", }}>
                         <p style={textStyle}>TOTAL:{total}</p>
-                        <RadarChart stats={stats} />
+                        <RadarChart stats={stats} pos={pos} />
                     </div>
 
                 </>
@@ -53,7 +53,7 @@ const StatsBoard = ({ stats, onStatsChange, pos }) => {
                     <div style={{ alignmentBaseline: "flex-start", }}>
                         <p style={textStyle}>TOTAL:{total}</p>
 
-                        <RadarChart stats={stats} />
+                        <RadarChart stats={stats} pos={pos} />
                     </div>
                     <div style={{ alignmentBaseline: "flex-start", marginTop: "auto", marginBottom: "auto" }}>
                         <StatsScore stats={stats} onScoreTextChange={onStatsChange} />
@@ -99,7 +99,10 @@ const StatsScore = ({ stats, onScoreTextChange }) => {
     )
 }
 // RadarChartコンポーネント
-const RadarChart = ({ stats }) => {
+const RadarChart = ({ stats, pos }) => {
+    const fillColor = pos == 0 ? "#e930304f" : "#52adf34f";
+    const strokeColor = pos == 0 ? "#e93030" : "#52adf3";
+    const circlesColor = pos == 0 ? "#e93030" : "#52adf3";
     const { Impact, Structure, Insight, Logic, Originality, Instinct } = stats;
 
     const coordinate = []
@@ -157,11 +160,11 @@ const RadarChart = ({ stats }) => {
                 </g>
                 {/**レーダーチャート 本体　fill 塗りつぶし色　最後の２桁が透明度　stroke 枠線色 　（x, y）*/}
                 <path d={rPath}
-                    fill="#1bd5ee4e"
-                    stroke="#1bd5ee" />
+                    fill={fillColor}
+                    stroke={strokeColor} />
 
                 {/**頂点 描画 */}
-                <g fill="#2589d0">
+                <g fill={circlesColor}>
                     {circles}
                 </g>
             </svg>
