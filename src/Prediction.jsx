@@ -1,20 +1,16 @@
 import { useState } from "react";
-const Prediction = () => {
-    const [value, setValue] = useState("");
+const Prediction = ({ predictionValue, handleChange }) => {
 
     return (
         <>
             <div>
                 勝利者予想{' '}
-                <select value={value} onChange={(e) => setValue(e.target.value)}>
+                <select value={predictionValue} onChange={(e) => handleChange(e.target.value)}>
                     <option value=""></option>
                     <option value="井上尚弥">井上尚弥</option>
                     <option value="アラン・ピカソ">アラン・ピカソ</option>
                 </select>
 
-                <p>
-                    勝利者：{value}
-                </p>
             </div>
         </>
     )
