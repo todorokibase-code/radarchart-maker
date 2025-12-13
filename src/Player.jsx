@@ -81,7 +81,7 @@ const StatsScore = ({ stats, onScoreTextChange }) => {
         return (
             <tr key={id}>
                 <th>{SCORE_ITEM[id]}</th>
-                <td><input id={key} type="number" value={stats[key]} onChange={handleChange} /></td>
+                <td ><input id={key} type="number" value={stats[key]} onChange={handleChange} style={{ fontSize: '24px', fontWeight: 'bold' }} /></td>
             </tr>
 
         )
