@@ -6,6 +6,8 @@ const VsComp = () => {
             fontSize: "5rem",
             lineHeight: '0.8',
             fontFamily: "'Bebas Neue', sans-serif",
+            textAlign: 'center'
+
 
 
         }
