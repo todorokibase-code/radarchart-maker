@@ -31,9 +31,9 @@ function RadarChartMaker() {
             <Prediction predictionValue={predictionValue} handleChange={setPredictionValue} />
             <div style={{ backgroundColor: '#f0f0f0', border: 'solid' }}>
               <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <p>
+                <h2>
                   勝利者：{predictionValue}
-                </p>
+                </h2>
               </div>
 
               <Player player={PLAYERS[0]} pos={0} />
