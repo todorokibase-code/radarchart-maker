@@ -71,3 +71,6 @@ export default defineConfig([
   },
 ])
 ```
+publise URL
+- 
+https://todorokibase-code.github.io/radarchart-maker/
