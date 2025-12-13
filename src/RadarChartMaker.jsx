@@ -30,22 +30,14 @@ function RadarChartMaker() {
 
         <Prediction predictionValue={predictionValue} handleChange={setPredictionValue} />
         <div style={styles.container}>
-          <div>
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <p>
-                勝利者：{predictionValue}
-              </p>
-            </div>
-            {PLAYERS.map((player, index) => {
-              const isFirst = index == 0;
-              return (
-                <React.Fragment key={index} >
-                  <Player player={player} pos={index} />
-                  {isFirst && <VsComp />}
-                </React.Fragment>
-              )
-            })}
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <p>
+              勝利者：{predictionValue}
+            </p>
           </div>
+          <Player player={PLAYERS[0]} pos={0} />
+          <VsComp />
+          <Player player={PLAYERS[1]} pos={1} />
         </div>
       </div>
 

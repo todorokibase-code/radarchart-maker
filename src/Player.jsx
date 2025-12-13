@@ -229,22 +229,21 @@ const Player = ({ player, pos }) => {
         );
     }
     return (
-        <div>
-            <div style={{ display: "flex", alignItems: "center" }}>
-                {pos == 0 ?
-                    <>
-                        <PlayerImage player={playerData} />
-                        <StatsBoard stats={playerData.stats} onStatsChange={handleStatsUpdate} pos={pos} />
-                    </>
-                    :
-                    <>
-                        <StatsBoard stats={playerData.stats} onStatsChange={handleStatsUpdate} pos={pos} />
-                        <PlayerImage player={playerData} />
-                    </>
-                }
+        <div style={{ display: "flex", alignItems: "center" }}>
+            {pos == 0 ?
+                <>
+                    <PlayerImage player={playerData} />
+                    <StatsBoard stats={playerData.stats} onStatsChange={handleStatsUpdate} pos={pos} />
+                </>
+                :
+                <>
+                    <StatsBoard stats={playerData.stats} onStatsChange={handleStatsUpdate} pos={pos} />
+                    <PlayerImage player={playerData} />
+                </>
+            }
 
-            </div>
-        </div>)
+        </div>
+    )
 }
 
 export default Player;
