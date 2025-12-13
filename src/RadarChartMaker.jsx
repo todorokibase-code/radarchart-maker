@@ -15,7 +15,6 @@ function RadarChartMaker() {
       justifyContent: "center",
       flexDirection: 'column',
       alignItems: 'center',
-      border: 'solid'
 
     },
     content_fit_div: {
@@ -27,17 +26,22 @@ function RadarChartMaker() {
 
     <>
       <div>
-
-        <Prediction predictionValue={predictionValue} handleChange={setPredictionValue} />
         <div style={styles.container}>
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <p>
-              勝利者：{predictionValue}
-            </p>
+          <div>
+            <Prediction predictionValue={predictionValue} handleChange={setPredictionValue} />
+            <div style={{ backgroundColor: '#f0f0f0', border: 'solid' }}>
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <p>
+                  勝利者：{predictionValue}
+                </p>
+              </div>
+
+              <Player player={PLAYERS[0]} pos={0} />
+              <VsComp />
+              <Player player={PLAYERS[1]} pos={1} />
+
+            </div>
           </div>
-          <Player player={PLAYERS[0]} pos={0} />
-          <VsComp />
-          <Player player={PLAYERS[1]} pos={1} />
         </div>
       </div>
 
